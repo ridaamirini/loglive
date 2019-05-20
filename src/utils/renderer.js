@@ -1,6 +1,7 @@
 import marked from 'marked3'
 import timeago from 'date-fns/distance_in_words_to_now'
 import parseDate from 'date-fns/parse'
+import deLocale from 'date-fns/locale/de'
 
 const COLORS = [
   '#9e0734',
@@ -56,7 +57,7 @@ export default ({ site, colors } = {}) => {
           level,
           title
         )}<time class="loglive-date" datetime="${date &&
-          parseDate(date)}">${date && timeago(date, { addSuffix: true })}</time></div>`
+          parseDate(date)}">${date && timeago(date, { addSuffix: true, locale: deLocale })}</time></div>`
       }
     }
 
